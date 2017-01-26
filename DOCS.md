@@ -5,6 +5,13 @@
 - [Auth](#auth)
 	- [Authenticate](#authenticate)
 	
+- [Member](#member)
+	- [Create member](#create-member)
+	- [Delete member](#delete-member)
+	- [Retrieve member](#retrieve-member)
+	- [Retrieve members](#retrieve-members)
+	- [Update member](#update-member)
+	
 - [Team](#team)
 	- [Create team](#create-team)
 	- [Delete team](#delete-team)
@@ -43,6 +50,84 @@
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Master access_token.</p>							|
 
+# Member
+
+## Create member
+
+
+
+	POST /members
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| name			| 			|  <p>Member's name.</p>							|
+| status			| 			|  <p>Member's status.</p>							|
+| group			| 			|  <p>Member's group.</p>							|
+
+## Delete member
+
+
+
+	DELETE /members/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve member
+
+
+
+	GET /members/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve members
+
+
+
+	GET /members
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update member
+
+
+
+	PUT /members/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| name			| 			|  <p>Member's name.</p>							|
+| status			| 			|  <p>Member's status.</p>							|
+| group			| 			|  <p>Member's group.</p>							|
+
 # Team
 
 ## Create team
@@ -57,10 +142,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
-| name			| 			|  <p>Team's name.</p>							|
-| createdAt			| 			|  <p>Team's createdAt.</p>							|
-| updatedAt			| 			|  <p>Team's updatedAt.</p>							|
-| members			| 			|  <p>Team's members.</p>							|
+| name			| String			|  <p>Team's name.</p>							|
+| members			| [Team_Member]			|  <p>Team's members.</p>							|
 
 ## Delete team
 
@@ -118,10 +201,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
-| name			| 			|  <p>Team's name.</p>							|
-| createdAt			| 			|  <p>Team's createdAt.</p>							|
-| updatedAt			| 			|  <p>Team's updatedAt.</p>							|
-| members			| 			|  <p>Team's members.</p>							|
+| name			| String			|  <p>Team's name.</p>							|
+| members			| [Team_Member]			|  <p>Team's members.</p>							|
 
 # User
 
