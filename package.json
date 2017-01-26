@@ -59,6 +59,8 @@
     "cors": "^2.7.1",
     "express": "^4.13.4",
     "express-force-ssl": "^0.3.2",
+    "glob": "^7.1.1",
+    "is-fullwidth-code-point": "^2.0.0",
     "jsonwebtoken": "^7.1.9",
     "lodash": "^4.13.1",
     "mongoose": "^4.4.19",
@@ -72,5 +74,6 @@
     "querymen": "^2.0.0",
     "rand-token": "^0.3.0",
     "request": "^2.74.0",
-    "request-promise": "^4.1.1"  }
+    "request-promise": "^4.1.1"
+  }
 }
