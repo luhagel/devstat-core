@@ -5,6 +5,13 @@
 - [Auth](#auth)
 	- [Authenticate](#authenticate)
 	
+- [Team](#team)
+	- [Create team](#create-team)
+	- [Delete team](#delete-team)
+	- [Retrieve team](#retrieve-team)
+	- [Retrieve teams](#retrieve-teams)
+	- [Update team](#update-team)
+	
 - [User](#user)
 	- [Create user](#create-user)
 	- [Delete user](#delete-user)
@@ -35,6 +42,86 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Master access_token.</p>							|
+
+# Team
+
+## Create team
+
+
+
+	POST /teams
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| name			| 			|  <p>Team's name.</p>							|
+| createdAt			| 			|  <p>Team's createdAt.</p>							|
+| updatedAt			| 			|  <p>Team's updatedAt.</p>							|
+| members			| 			|  <p>Team's members.</p>							|
+
+## Delete team
+
+
+
+	DELETE /teams/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve team
+
+
+
+	GET /teams/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve teams
+
+
+
+	GET /teams
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update team
+
+
+
+	PUT /teams/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| name			| 			|  <p>Team's name.</p>							|
+| createdAt			| 			|  <p>Team's createdAt.</p>							|
+| updatedAt			| 			|  <p>Team's updatedAt.</p>							|
+| members			| 			|  <p>Team's members.</p>							|
 
 # User
 
