@@ -5,6 +5,13 @@
 - [Auth](#auth)
 	- [Authenticate](#authenticate)
 	
+- [GithubAccount](#githubaccount)
+	- [Create github account](#create-github-account)
+	- [Delete github account](#delete-github-account)
+	- [Retrieve github account](#retrieve-github-account)
+	- [Retrieve github accounts](#retrieve-github-accounts)
+	- [Update github account](#update-github-account)
+	
 - [Member](#member)
 	- [Create member](#create-member)
 	- [Delete member](#delete-member)
@@ -49,6 +56,82 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Master access_token.</p>							|
+
+# GithubAccount
+
+## Create github account
+
+
+
+	POST /github_accounts
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| login			| 			|  <p>Github account's login.</p>							|
+| commits			| 			|  <p>Github account's commits.</p>							|
+
+## Delete github account
+
+
+
+	DELETE /github_accounts/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve github account
+
+
+
+	GET /github_accounts/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve github accounts
+
+
+
+	GET /github_accounts
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update github account
+
+
+
+	PUT /github_accounts/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| login			| 			|  <p>Github account's login.</p>							|
+| commits			| 			|  <p>Github account's commits.</p>							|
 
 # Member
 

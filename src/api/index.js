@@ -3,6 +3,7 @@ import user from './user'
 import auth from './auth'
 import team from './team'
 import member from './member'
+import githubAccount from './github_account'
 
 const router = new Router()
 
@@ -33,5 +34,6 @@ router.use('/users', user)
 router.use('/auth', auth)
 router.use('/teams', team)
 router.use('/members', member)
+router.use('/github_accounts', githubAccount)
 
 export default router
