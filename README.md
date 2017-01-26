@@ -1,5 +1,7 @@
 # Devstat Core
 
+[![Build Status](https://travis-ci.org/luhagel/devstat-core.svg?branch=master)](https://travis-ci.org/luhagel/devstat-core)
+
 Core API for the DevStat family of services.
 
 See the API's [documentation](DOCS.md).

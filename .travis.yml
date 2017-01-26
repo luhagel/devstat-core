@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-- v4
-- v5
 - v6
 addons:
   apt:
@@ -22,5 +20,3 @@ deploy:
   api_key:
     secure: SXQu+/farJifJolH91oJBKwgH2YMfgm+IVkB/32QgetHuJHC/yeDhm9CmU6JDtukF7EpgXHJTv3T7oReitvlh8rxwXZ/4ORg8v1tb4MZA/gPDcnNQkpzNTHMOhzsjaqz/HCWU/JETIpxOZmmUVCrY6N1qBIyJfoAEIyo4sWKTalltB8MA44a2INW1vzclF6wLvq4x5DmkRtOtjyWoSxKOLi3IPKT2aSHEgNgevaZIb3mff+78+PUu1dtcfu7qnY41eSORoJsrqNc6fA1QBczpmSasDpjLWD9fNqW3/nR2VgH/5ZFstaPYWLUD++slCyW9LZnQTRwlGGVNlIHubj/qgqQYNpQr+qzlzjHy+e7I61uzpFxcAMNbZng5t+Qv5g64VfwSOR+qcQMakPjt3M1QkLTfD/X3K0xBNuYoVehaVkNn2G6ZC6Kb+EHRayCf2tYmVQgVS95xvu9458agGbs/cO5yTu0saoQKmeWPaA128toSaLKtluwzng90X1xhe+1f3msEiXsCqrw71TW1Du+Kw7DbQCcHrJ+z4MbVvaD0n6FQvglFT5ac9D7aonBIfwsxDAZMvacir/X0LgsVmp9HaZPpYym6Wcse5oQoCmh8WYYx3ShiZyFWAFW0IWbKzwcQtPgPhXm6zQqjowsFssmXxrjh0e0tgg0bb+2RU6RihA=
   app: devstat-core
-  on:
-    repo: luhagel/devstat-core
