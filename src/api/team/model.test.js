@@ -16,9 +16,9 @@ describe('view', () => {
     expect(typeof view.user).toBe('object')
     expect(view.user.id).toBe(user.id)
     expect(view.name).toBe(team.name)
-    expect(view.createdAt).toBe(team.createdAt)
-    expect(view.updatedAt).toBe(team.updatedAt)
     expect(view.members).toBe(team.members)
+    expect(view.createdAt).toBeTruthy()
+    expect(view.updatedAt).toBeTruthy()
   })
 
   it('returns full view', () => {
@@ -28,8 +28,8 @@ describe('view', () => {
     expect(typeof view.user).toBe('object')
     expect(view.user.id).toBe(user.id)
     expect(view.name).toBe(team.name)
-    expect(view.createdAt).toBe(team.createdAt)
-    expect(view.updatedAt).toBe(team.updatedAt)
     expect(view.members).toBe(team.members)
+    expect(view.createdAt).toBeTruthy()
+    expect(view.updatedAt).toBeTruthy()
   })
 })

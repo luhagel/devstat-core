@@ -86,7 +86,7 @@ test('PUT /teams/:id 200 (user)', async () => {
 test('PUT /teams/:id 401 (user) - another user', async () => {
   const { status } = await request(app())
     .put(`/${team.id}`)
-    .send({ access_token: anotherSession, name: 'test', createdAt: 'test', updatedAt: 'test', members: 'test' })
+    .send({ access_token: anotherSession, name: 'test', members: 'test' })
   expect(status).toBe(401)
 })
 
@@ -99,7 +99,7 @@ test('PUT /teams/:id 401', async () => {
 test('PUT /teams/:id 404 (user)', async () => {
   const { status } = await request(app())
     .put('/123456789098765432123456')
-    .send({ access_token: anotherSession, name: 'test', createdAt: 'test', updatedAt: 'test', members: 'test' })
+    .send({ access_token: anotherSession, name: 'test', members: 'test' })
   expect(status).toBe(404)
 })
 

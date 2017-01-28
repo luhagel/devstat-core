@@ -9,12 +9,6 @@ const teamSchema = new Schema({
   name: {
     type: String
   },
-  createdAt: {
-    type: String
-  },
-  updatedAt: {
-    type: String
-  },
   members: {
     type: String
   }
@@ -29,9 +23,9 @@ teamSchema.methods = {
       id: this.id,
       user: this.user.view(full),
       name: this.name,
+      members: this.members,
       createdAt: this.createdAt,
-      updatedAt: this.updatedAt,
-      members: this.members
+      updatedAt: this.updatedAt
     }
 
     return full ? {

@@ -7,7 +7,7 @@ import { schema } from './model'
 export Team, { schema } from './model'
 
 const router = new Router()
-const { name, createdAt, updatedAt, members } = schema.tree
+const { name, members } = schema.tree
 
 /**
  * @api {post} /teams Create team
@@ -15,8 +15,8 @@ const { name, createdAt, updatedAt, members } = schema.tree
  * @apiGroup Team
  * @apiPermission user
  * @apiParam {String} access_token user access token.
- * @apiParam {String} name Team's name.
- * @apiParam {[Team_Member]} members Team's members.
+ * @apiParam name Team's name.
+ * @apiParam members Team's members.
  * @apiSuccess {Object} team Team's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Team not found.
@@ -24,7 +24,7 @@ const { name, createdAt, updatedAt, members } = schema.tree
  */
 router.post('/',
   token({ required: true }),
-  body({ name, createdAt, updatedAt, members }),
+  body({ name, members }),
   create)
 
 /**
@@ -64,8 +64,8 @@ router.get('/:id',
  * @apiGroup Team
  * @apiPermission user
  * @apiParam {String} access_token user access token.
- * @apiParam {String} name Team's name.
- * @apiParam {[Team_Member]} members Team's members.
+ * @apiParam name Team's name.
+ * @apiParam members Team's members.
  * @apiSuccess {Object} team Team's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Team not found.
@@ -73,7 +73,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ name, createdAt, updatedAt, members }),
+  body({ name, members }),
   update)
 
 /**
