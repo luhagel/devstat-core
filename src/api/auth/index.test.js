@@ -16,7 +16,6 @@ beforeEach(async () => {
 test('POST /auth 201 (master)', async () => {
   const { status, body } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
     .auth('a@a.com', '123456')
   expect(status).toBe(201)
   expect(typeof body).toBe('object')
@@ -29,7 +28,6 @@ test('POST /auth 201 (master)', async () => {
 test('POST /auth 400 (master) - invalid email', async () => {
   const { status, body } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
     .auth('invalid', '123456')
   expect(status).toBe(400)
   expect(typeof body).toBe('object')
@@ -39,7 +37,6 @@ test('POST /auth 400 (master) - invalid email', async () => {
 test('POST /auth 400 (master) - invalid password', async () => {
   const { status, body } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
     .auth('a@a.com', '123')
   expect(status).toBe(400)
   expect(typeof body).toBe('object')
@@ -49,7 +46,6 @@ test('POST /auth 400 (master) - invalid password', async () => {
 test('POST /auth 401 (master) - user does not exist', async () => {
   const { status } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
     .auth('b@b.com', '123456')
   expect(status).toBe(401)
 })
@@ -57,21 +53,12 @@ test('POST /auth 401 (master) - user does not exist', async () => {
 test('POST /auth 401 (master) - wrong password', async () => {
   const { status } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
     .auth('a@a.com', '654321')
-  expect(status).toBe(401)
-})
-
-test('POST /auth 401 (master) - missing access_token', async () => {
-  const { status } = await request(app())
-    .post('/')
-    .auth('a@a.com', '123456')
   expect(status).toBe(401)
 })
 
 test('POST /auth 401 (master) - missing auth', async () => {
   const { status } = await request(app())
     .post('/')
-    .query({ access_token: masterKey })
   expect(status).toBe(401)
 })
