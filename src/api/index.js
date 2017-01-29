@@ -2,8 +2,8 @@ import { Router } from 'express'
 import user from './user'
 import auth from './auth'
 import member from './member'
-import githubAccount from './github_account'
 import team from './team'
+import dataSource from './data-source'
 
 const router = new Router()
 
@@ -33,7 +33,7 @@ const router = new Router()
 router.use('/users', user)
 router.use('/auth', auth)
 router.use('/members', member)
-router.use('/github_accounts', githubAccount)
 router.use('/teams', team)
+router.use('/data-sources', dataSource)
 
 export default router

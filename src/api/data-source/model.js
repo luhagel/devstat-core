@@ -1,23 +1,23 @@
 import mongoose, { Schema } from 'mongoose'
 
-const githubAccountSchema = new Schema({
-  login: {
+const dataSourceSchema = new Schema({
+  type: {
     type: String
   },
-  commits: {
+  data: {
     type: String
   }
 }, {
   timestamps: true
 })
 
-githubAccountSchema.methods = {
+dataSourceSchema.methods = {
   view (full) {
     const view = {
       // simple view
       id: this.id,
-      login: this.login,
-      commits: this.commits,
+      type: this.type,
+      data: this.data,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }
@@ -29,7 +29,7 @@ githubAccountSchema.methods = {
   }
 }
 
-const model = mongoose.model('GithubAccount', githubAccountSchema)
+const model = mongoose.model('DataSource', dataSourceSchema)
 
 export const schema = model.schema
 export default model

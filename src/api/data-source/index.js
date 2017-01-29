@@ -4,37 +4,37 @@ import { middleware as body } from 'bodymen'
 import { token } from '../../services/passport'
 import { create, index, show, update, destroy } from './controller'
 import { schema } from './model'
-export GithubAccount, { schema } from './model'
+export DataSource, { schema } from './model'
 
 const router = new Router()
-const { login, commits } = schema.tree
+const { type, data } = schema.tree
 
 /**
- * @api {post} /github_accounts Create github account
- * @apiName CreateGithubAccount
- * @apiGroup GithubAccount
+ * @api {post} /data-sources Create data source
+ * @apiName CreateDataSource
+ * @apiGroup DataSource
  * @apiPermission user
  * @apiParam {String} access_token user access token.
- * @apiParam login Github account's login.
- * @apiParam commits Github account's commits.
- * @apiSuccess {Object} githubAccount Github account's data.
+ * @apiParam type Data source's type.
+ * @apiParam data Data source's data.
+ * @apiSuccess {Object} dataSource Data source's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Github account not found.
+ * @apiError 404 Data source not found.
  * @apiError 401 user access only.
  */
 router.post('/',
   token({ required: true }),
-  body({ login, commits }),
+  body({ type, data }),
   create)
 
 /**
- * @api {get} /github_accounts Retrieve github accounts
- * @apiName RetrieveGithubAccounts
- * @apiGroup GithubAccount
+ * @api {get} /data-sources Retrieve data sources
+ * @apiName RetrieveDataSources
+ * @apiGroup DataSource
  * @apiPermission user
  * @apiParam {String} access_token user access token.
  * @apiUse listParams
- * @apiSuccess {Object[]} githubAccounts List of github accounts.
+ * @apiSuccess {Object[]} dataSources List of data sources.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 401 user access only.
  */
@@ -44,14 +44,14 @@ router.get('/',
   index)
 
 /**
- * @api {get} /github_accounts/:id Retrieve github account
- * @apiName RetrieveGithubAccount
- * @apiGroup GithubAccount
+ * @api {get} /data-sources/:id Retrieve data source
+ * @apiName RetrieveDataSource
+ * @apiGroup DataSource
  * @apiPermission user
  * @apiParam {String} access_token user access token.
- * @apiSuccess {Object} githubAccount Github account's data.
+ * @apiSuccess {Object} dataSource Data source's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Github account not found.
+ * @apiError 404 Data source not found.
  * @apiError 401 user access only.
  */
 router.get('/:id',
@@ -59,31 +59,31 @@ router.get('/:id',
   show)
 
 /**
- * @api {put} /github_accounts/:id Update github account
- * @apiName UpdateGithubAccount
- * @apiGroup GithubAccount
+ * @api {put} /data-sources/:id Update data source
+ * @apiName UpdateDataSource
+ * @apiGroup DataSource
  * @apiPermission user
  * @apiParam {String} access_token user access token.
- * @apiParam login Github account's login.
- * @apiParam commits Github account's commits.
- * @apiSuccess {Object} githubAccount Github account's data.
+ * @apiParam type Data source's type.
+ * @apiParam data Data source's data.
+ * @apiSuccess {Object} dataSource Data source's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Github account not found.
+ * @apiError 404 Data source not found.
  * @apiError 401 user access only.
  */
 router.put('/:id',
   token({ required: true }),
-  body({ login, commits }),
+  body({ type, data }),
   update)
 
 /**
- * @api {delete} /github_accounts/:id Delete github account
- * @apiName DeleteGithubAccount
- * @apiGroup GithubAccount
+ * @api {delete} /data-sources/:id Delete data source
+ * @apiName DeleteDataSource
+ * @apiGroup DataSource
  * @apiPermission user
  * @apiParam {String} access_token user access token.
  * @apiSuccess (Success 204) 204 No Content.
- * @apiError 404 Github account not found.
+ * @apiError 404 Data source not found.
  * @apiError 401 user access only.
  */
 router.delete('/:id',
