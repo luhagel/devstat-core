@@ -3,7 +3,7 @@ import { DataSource } from '.'
 let dataSource
 
 beforeEach(async () => {
-  dataSource = await DataSource.create({ type: 'test', data: 'test' })
+  dataSource = await DataSource.create({ type: 'test', data: {commits: 20} })
 })
 
 describe('view', () => {

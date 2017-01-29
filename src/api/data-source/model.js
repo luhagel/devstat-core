@@ -2,10 +2,12 @@ import mongoose, { Schema } from 'mongoose'
 
 const dataSourceSchema = new Schema({
   type: {
-    type: String
+    type: String,
+    lowercase: true,
+    trim: true
   },
   data: {
-    type: String
+    type: Object
   }
 }, {
   timestamps: true

@@ -5,12 +5,12 @@
 - [Auth](#auth)
 	- [Authenticate](#authenticate)
 	
-- [GithubAccount](#githubaccount)
-	- [Create github account](#create-github-account)
-	- [Delete github account](#delete-github-account)
-	- [Retrieve github account](#retrieve-github-account)
-	- [Retrieve github accounts](#retrieve-github-accounts)
-	- [Update github account](#update-github-account)
+- [DataSource](#datasource)
+	- [Create data source](#create-data-source)
+	- [Delete data source](#delete-data-source)
+	- [Retrieve data source](#retrieve-data-source)
+	- [Retrieve data sources](#retrieve-data-sources)
+	- [Update data source](#update-data-source)
 	
 - [Member](#member)
 	- [Create member](#create-member)
@@ -57,28 +57,13 @@
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Master access_token.</p>							|
 
-# GithubAccount
+# DataSource
 
-## Create github account
-
-
-
-	POST /github_accounts
-
-
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>user access token.</p>							|
-| login			| 			|  <p>Github account's login.</p>							|
-| commits			| 			|  <p>Github account's commits.</p>							|
-
-## Delete github account
+## Create data source
 
 
 
-	DELETE /github_accounts/:id
+	POST /data-sources
 
 
 ### Parameters
@@ -86,12 +71,14 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
+| type			| 			|  <p>Data source's type.</p>							|
+| data			| 			|  <p>Data source's data.</p>							|
 
-## Retrieve github account
+## Delete data source
 
 
 
-	GET /github_accounts/:id
+	DELETE /data-sources/:id
 
 
 ### Parameters
@@ -100,11 +87,24 @@
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
 
-## Retrieve github accounts
+## Retrieve data source
 
 
 
-	GET /github_accounts
+	GET /data-sources/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve data sources
+
+
+
+	GET /data-sources
 
 
 ### Parameters
@@ -118,11 +118,11 @@
 | sort			| String[]			| **optional** <p>Order of returned items.</p>							|
 | fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
 
-## Update github account
+## Update data source
 
 
 
-	PUT /github_accounts/:id
+	PUT /data-sources/:id
 
 
 ### Parameters
@@ -130,8 +130,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
-| login			| 			|  <p>Github account's login.</p>							|
-| commits			| 			|  <p>Github account's commits.</p>							|
+| type			| 			|  <p>Data source's type.</p>							|
+| data			| 			|  <p>Data source's data.</p>							|
 
 # Member
 
@@ -225,8 +225,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
-| name			| String			|  <p>Team's name.</p>							|
-| members			| [Team_Member]			|  <p>Team's members.</p>							|
+| name			| 			|  <p>Team's name.</p>							|
+| members			| 			|  <p>Team's members.</p>							|
 
 ## Delete team
 
@@ -284,8 +284,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>user access token.</p>							|
-| name			| String			|  <p>Team's name.</p>							|
-| members			| [Team_Member]			|  <p>Team's members.</p>							|
+| name			| 			|  <p>Team's name.</p>							|
+| members			| 			|  <p>Team's members.</p>							|
 
 # User
 
