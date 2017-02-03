@@ -7,7 +7,8 @@ const teamSchema = new Schema({
     required: true
   },
   name: {
-    type: String
+    type: String,
+    required: true
   },
   members: {
     type: String
