@@ -1,5 +1,7 @@
 import mongoose, { Schema } from 'mongoose'
 
+import Member from '../member/model' // eslint-disable-line no-unused-vars
+
 const teamSchema = new Schema({
   user: {
     type: Schema.ObjectId,
