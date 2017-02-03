@@ -17,7 +17,7 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 
 export const show = ({ params }, res, next) =>
   Team.findById(params.id)
-    .populate('user')
+    .populate('user members')
     .then(notFound(res))
     .then((team) => team ? team.view() : null)
     .then(success(res))

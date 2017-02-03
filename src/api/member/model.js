@@ -1,29 +1,18 @@
 import mongoose, { Schema } from 'mongoose'
 
-const teamSchema = new Schema({
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User',
-    required: true
-  },
+const memberSchema = new Schema({
   name: {
-    type: String,
-    required: true
-  },
-  members: {
-    type: Schema.ObjectId,
-    ref: 'Member'
+    type: String
   }
 }, {
   timestamps: true
 })
 
-teamSchema.methods = {
+memberSchema.methods = {
   view (full) {
     const view = {
       // simple view
       id: this.id,
-      user: this.user.view(full),
       name: this.name,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
@@ -36,7 +25,7 @@ teamSchema.methods = {
   }
 }
 
-const model = mongoose.model('Team', teamSchema)
+const model = mongoose.model('Member', memberSchema)
 
 export const schema = model.schema
 export default model

@@ -4,6 +4,8 @@ import auth from './auth'
 import member from './member'
 import team from './team'
 import dataSource from './data-source'
+import team from './team'
+import member from './member'
 
 const router = new Router()
 
@@ -35,5 +37,7 @@ router.use('/auth', auth)
 router.use('/members', member)
 router.use('/teams', team)
 router.use('/data-sources', dataSource)
+router.use('/teams', team)
+router.use('/members', member)
 
 export default router
