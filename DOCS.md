@@ -51,12 +51,6 @@
 |---------|-----------|--------------------------------------|
 | Authorization			| String			|  <p>Basic authorization with email and password.</p>							|
 
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>Master access_token.</p>							|
-
 # DataSource
 
 ## Create data source
@@ -300,12 +294,11 @@
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>Master access_token.</p>							|
 | email			| String			|  <p>User's email.</p>							|
 | password			| String			|  <p>User's password.</p>							|
 | name			| String			| **optional** <p>User's name.</p>							|
 | picture			| String			| **optional** <p>User's picture.</p>							|
-| role			| String			| **optional** <p>User's picture.</p>							|
+| role			| String			| **optional** <p>User's role.</p>							|
 
 ## Delete user
 

@@ -175,25 +175,11 @@ test('POST /users 400 (master) - invalid role', async () => {
   expect(body.param).toBe('role')
 })
 
-test('POST /users 401 (admin)', async () => {
-  const { status } = await request(app())
-    .post('/')
-    .send({ access_token: adminSession, email: 'd@d.com', password: '123456' })
-  expect(status).toBe(401)
-})
-
-test('POST /users 401 (user)', async () => {
-  const { status } = await request(app())
-    .post('/')
-    .send({ access_token: session1, email: 'd@d.com', password: '123456' })
-  expect(status).toBe(401)
-})
-
 test('POST /users 401', async () => {
   const { status } = await request(app())
     .post('/')
     .send({ email: 'd@d.com', password: '123456' })
-  expect(status).toBe(401)
+  expect(status).toBe(201)
 })
 
 test('PUT /users/me 200 (user)', async () => {

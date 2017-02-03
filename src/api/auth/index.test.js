@@ -1,5 +1,4 @@
 import request from 'supertest-as-promised'
-import { masterKey } from '../../config'
 import { User } from '../user'
 import { verify } from '../../services/jwt'
 import express from '../../services/express'
