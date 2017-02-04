@@ -6,6 +6,7 @@ import team from './team'
 import dataSource from './data-source'
 import team from './team'
 import member from './member'
+import mailinglist from './mailinglist'
 
 const router = new Router()
 
@@ -39,5 +40,6 @@ router.use('/teams', team)
 router.use('/data-sources', dataSource)
 router.use('/teams', team)
 router.use('/members', member)
+router.use('/mailinglists', mailinglist)
 
 export default router
