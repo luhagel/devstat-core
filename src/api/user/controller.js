@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import signUp from '../../core/mailchimp'
 import { success, notFound } from '../../services/response/'
 import { User } from '.'
 
@@ -21,6 +22,7 @@ export const showMe = ({ user }, res) =>
 export const create = ({ bodymen: { body } }, res, next) =>
   User.create(body)
     .then((user) => user.view(true))
+    .then(signUp(body.email, body.name))
     .then(success(res, 201))
     .catch((err) => {
       /* istanbul ignore else */
