@@ -11,11 +11,9 @@ const signUp = (email, name) => {
   { email_address: email, status: 'subscribed', merge_fields: { FNAME: name, LNAME: '' } },
   {headers: { Authorization: authString }})
   .then((res) => {
-    console.log(res)
     return null
   })
   .catch((err) => {
-    console.log(err)
     return err
   })
 }
